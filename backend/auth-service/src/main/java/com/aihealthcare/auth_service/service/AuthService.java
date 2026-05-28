@@ -4,6 +4,7 @@ import com.aihealthcare.auth_service.dto.LoginRequest;
 import com.aihealthcare.auth_service.dto.RegisterRequest;
 import com.aihealthcare.auth_service.entity.User;
 import com.aihealthcare.auth_service.jwt.JwtService;
+import com.aihealthcare.auth_service.kafka.KafkaProducerService;
 import com.aihealthcare.auth_service.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,6 +24,9 @@ public class AuthService {
     @Autowired
     private JwtService jwtService;
 
+    @Autowired
+    private KafkaProducerService kafkaProducerService;
+
     public String register(RegisterRequest request) {
 
         User user = new User();
@@ -36,6 +40,9 @@ public class AuthService {
         user.setRole("USER");
 
         userRepository.save(user);
+
+        kafkaProducerService.sendMessage(
+                "New user registered: " + user.getEmail());
 
         return "User Registered Successfully";
     }
