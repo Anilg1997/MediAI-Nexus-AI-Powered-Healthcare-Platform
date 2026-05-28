@@ -106,3 +106,74 @@ services:
 
     ports:
       - "8085:8085"
+
+  prescription-service:
+    build: ./prescription-service
+
+    container_name: prescription-service
+
+    depends_on:
+      - postgres
+      - kafka
+
+    ports:
+      - "8086:8086"
+
+medical-record-service:
+  build: ./medical-record-service
+
+  container_name: medical-record-service
+
+  depends_on:
+    - postgres
+    - kafka
+
+  ports:
+    - "8087:8087"
+
+lab-service:
+  build: ./lab-service
+
+  container_name: lab-service
+
+  depends_on:
+    - postgres
+    - kafka
+
+  ports:
+    - "8088:8088"
+
+notification-service:
+  build: ./notification-service
+
+  container_name: notification-service
+
+  depends_on:
+    - kafka
+
+  ports:
+    - "8089:8089"
+
+file-service:
+  build: ./file-service
+
+  container_name: file-service
+
+  depends_on:
+    - postgres
+    - kafka
+
+  ports:
+    - "8090:8090"
+
+payment-service:
+  build: ./payment-service
+
+  container_name: payment-service
+
+  depends_on:
+    - postgres
+    - kafka
+
+  ports:
+    - "8091:8091"

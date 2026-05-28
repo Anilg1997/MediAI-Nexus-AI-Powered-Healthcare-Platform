@@ -1,0 +1,226 @@
+<div class="container mt-4">
+
+  <h2 class="text-danger mb-4">
+
+    Lab Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addReport()">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Patient ID"
+
+            [(ngModel)]="report.patientId"
+
+            name="patientId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Doctor ID"
+
+            [(ngModel)]="report.doctorId"
+
+            name="doctorId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Test Name"
+
+            [(ngModel)]="report.testName"
+
+            name="testName">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Test Result"
+
+            [(ngModel)]="report.testResult"
+
+            name="testResult">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Report URL"
+
+            [(ngModel)]="report.reportUrl"
+
+            name="reportUrl">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <select
+            class="form-select"
+
+            [(ngModel)]="report.status"
+
+            name="status">
+
+            <option value="">
+              Select Status
+            </option>
+
+            <option value="Pending">
+              Pending
+            </option>
+
+            <option value="Completed">
+              Completed
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="date"
+
+            class="form-control"
+
+            [(ngModel)]="report.testDate"
+
+            name="testDate">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-danger">
+
+        {{ editMode
+          ? 'Update Report'
+          : 'Add Report' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Lab Reports</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Patient</th>
+
+          <th>Doctor</th>
+
+          <th>Test</th>
+
+          <th>Result</th>
+
+          <th>Status</th>
+
+          <th>Date</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr
+          *ngFor="
+            let r of reports">
+
+          <td>{{ r.id }}</td>
+
+          <td>{{ r.patientId }}</td>
+
+          <td>{{ r.doctorId }}</td>
+
+          <td>{{ r.testName }}</td>
+
+          <td>{{ r.testResult }}</td>
+
+          <td>{{ r.status }}</td>
+
+          <td>{{ r.testDate }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-primary btn-sm me-2"
+
+              (click)="editReport(r)">
+
+              Edit
+
+            </button>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deleteReport(r.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

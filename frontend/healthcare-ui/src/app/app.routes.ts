@@ -20,6 +20,21 @@ from './pages/appointment/appointment';
 import { AiCheckerComponent }
 from './pages/ai-checker/ai-checker';
 
+import { PrescriptionComponent }
+from './pages/prescription/prescription';
+
+import { MedicalRecordComponent }
+from './pages/medical-record/medical-record';
+
+import { LabComponent }
+from './pages/lab/lab';
+
+import { FilesComponent }
+from './pages/files/files';
+
+import { PaymentComponent }
+from './pages/payment/payment';
+
 export const routes: Routes = [
 
   {
@@ -53,5 +68,28 @@ export const routes: Routes = [
 {
   path: 'ai-checker',
   component: AiCheckerComponent
+},
+{
+  path: 'prescriptions',
+  component: PrescriptionComponent
+},
+{
+  path: 'medical-records',
+  component: MedicalRecordComponent
+},
+{
+  path: 'labs',
+
+  component: LabComponent
+},
+{
+  path: 'files',
+
+  component: FilesComponent
+},
+{
+  path: 'payments',
+
+  component: PaymentComponent
 }
 ];

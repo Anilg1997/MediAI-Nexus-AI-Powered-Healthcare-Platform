@@ -1,0 +1,216 @@
+<div class="container mt-4">
+
+  <h2 class="text-primary mb-4">
+
+    Prescription Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addPrescription()">
+
+      <div class="row">
+
+        <div class="col-md-4 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Appointment ID"
+
+            [(ngModel)]="prescription.appointmentId"
+
+            name="appointmentId">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Patient ID"
+
+            [(ngModel)]="prescription.patientId"
+
+            name="patientId">
+
+        </div>
+
+        <div class="col-md-4 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Doctor ID"
+
+            [(ngModel)]="prescription.doctorId"
+
+            name="doctorId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Medicines"
+
+            [(ngModel)]="prescription.medicines"
+
+            name="medicines">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Dosage"
+
+            [(ngModel)]="prescription.dosage"
+
+            name="dosage">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Instructions"
+
+            [(ngModel)]="prescription.instructions"
+
+            name="instructions">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="date"
+
+            class="form-control"
+
+            [(ngModel)]="prescription.createdDate"
+
+            name="createdDate">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-primary">
+
+        {{ editMode
+          ? 'Update Prescription'
+          : 'Add Prescription' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Prescription List</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Patient</th>
+
+          <th>Doctor</th>
+
+          <th>Medicines</th>
+
+          <th>Dosage</th>
+
+          <th>Instructions</th>
+
+          <th>Date</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr
+          *ngFor="
+            let p of prescriptions">
+
+          <td>{{ p.id }}</td>
+
+          <td>{{ p.patientId }}</td>
+
+          <td>{{ p.doctorId }}</td>
+
+          <td>{{ p.medicines }}</td>
+
+          <td>{{ p.dosage }}</td>
+
+          <td>{{ p.instructions }}</td>
+
+          <td>{{ p.createdDate }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-primary btn-sm me-2"
+
+              (click)="editPrescription(p)">
+
+              Edit
+
+            </button>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deletePrescription(p.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

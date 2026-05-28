@@ -1,0 +1,204 @@
+<div class="container mt-4">
+
+  <h2 class="text-success mb-4">
+
+    Medical Record Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addRecord()">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Patient ID"
+
+            [(ngModel)]="record.patientId"
+
+            name="patientId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Doctor ID"
+
+            [(ngModel)]="record.doctorId"
+
+            name="doctorId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Diagnosis"
+
+            [(ngModel)]="record.diagnosis"
+
+            name="diagnosis">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Test Results"
+
+            [(ngModel)]="record.testResults"
+
+            name="testResults">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <textarea
+
+            class="form-control"
+
+            rows="3"
+
+            placeholder="Doctor Notes"
+
+            [(ngModel)]="record.doctorNotes"
+
+            name="doctorNotes">
+
+          </textarea>
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="date"
+
+            class="form-control"
+
+            [(ngModel)]="record.visitDate"
+
+            name="visitDate">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-success">
+
+        {{ editMode
+          ? 'Update Record'
+          : 'Add Record' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Medical Records</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Patient</th>
+
+          <th>Doctor</th>
+
+          <th>Diagnosis</th>
+
+          <th>Test Results</th>
+
+          <th>Doctor Notes</th>
+
+          <th>Visit Date</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr
+          *ngFor="
+            let r of records">
+
+          <td>{{ r.id }}</td>
+
+          <td>{{ r.patientId }}</td>
+
+          <td>{{ r.doctorId }}</td>
+
+          <td>{{ r.diagnosis }}</td>
+
+          <td>{{ r.testResults }}</td>
+
+          <td>{{ r.doctorNotes }}</td>
+
+          <td>{{ r.visitDate }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-primary btn-sm me-2"
+
+              (click)="editRecord(r)">
+
+              Edit
+
+            </button>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deleteRecord(r.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

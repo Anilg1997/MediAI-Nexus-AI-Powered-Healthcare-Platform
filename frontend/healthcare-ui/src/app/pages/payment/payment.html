@@ -1,0 +1,248 @@
+<div class="container mt-4">
+
+  <h2 class="text-success mb-4">
+
+    Payment Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addPayment()">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Patient ID"
+
+            [(ngModel)]="payment.patientId"
+
+            name="patientId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Appointment ID"
+
+            [(ngModel)]="payment.appointmentId"
+
+            name="appointmentId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Amount"
+
+            [(ngModel)]="payment.amount"
+
+            name="amount">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <select
+            class="form-select"
+
+            [(ngModel)]="payment.paymentMethod"
+
+            name="paymentMethod">
+
+            <option value="">
+              Select Method
+            </option>
+
+            <option value="UPI">
+              UPI
+            </option>
+
+            <option value="CARD">
+              CARD
+            </option>
+
+            <option value="CASH">
+              CASH
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <select
+            class="form-select"
+
+            [(ngModel)]="payment.paymentStatus"
+
+            name="paymentStatus">
+
+            <option value="">
+              Select Status
+            </option>
+
+            <option value="SUCCESS">
+              SUCCESS
+            </option>
+
+            <option value="PENDING">
+              PENDING
+            </option>
+
+            <option value="FAILED">
+              FAILED
+            </option>
+
+          </select>
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Transaction ID"
+
+            [(ngModel)]="payment.transactionId"
+
+            name="transactionId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="date"
+
+            class="form-control"
+
+            [(ngModel)]="payment.paymentDate"
+
+            name="paymentDate">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-success">
+
+        {{ editMode
+          ? 'Update Payment'
+          : 'Add Payment' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Payment Transactions</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Patient</th>
+
+          <th>Appointment</th>
+
+          <th>Amount</th>
+
+          <th>Method</th>
+
+          <th>Status</th>
+
+          <th>Transaction ID</th>
+
+          <th>Date</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr
+          *ngFor="
+            let p of payments">
+
+          <td>{{ p.id }}</td>
+
+          <td>{{ p.patientId }}</td>
+
+          <td>{{ p.appointmentId }}</td>
+
+          <td>{{ p.amount }}</td>
+
+          <td>{{ p.paymentMethod }}</td>
+
+          <td>{{ p.paymentStatus }}</td>
+
+          <td>{{ p.transactionId }}</td>
+
+          <td>{{ p.paymentDate }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-primary btn-sm me-2"
+
+              (click)="editPayment(p)">
+
+              Edit
+
+            </button>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deletePayment(p.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
