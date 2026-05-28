@@ -1,0 +1,53 @@
+<div class="container">
+
+  <div class="card">
+
+    <h2>Login</h2>
+
+    <form (ngSubmit)="login()">
+
+      <input
+        type="email"
+        placeholder="Enter Email"
+        [(ngModel)]="email"
+        name="email">
+
+      <input
+        type="password"
+        placeholder="Enter Password"
+        [(ngModel)]="password"
+        name="password">
+
+      <button
+        type="submit"
+        [disabled]="loading">
+
+        {{ loading ? 'Logging in...' : 'Login' }}
+
+      </button>
+
+    </form>
+
+    <p
+      class="success"
+      *ngIf="successMessage">
+
+      {{ successMessage }}
+
+    </p>
+
+    <p
+      class="error"
+      *ngIf="errorMessage">
+
+      {{ errorMessage }}
+
+    </p>
+
+    <a routerLink="/register">
+      Create Account
+    </a>
+
+  </div>
+
+</div>

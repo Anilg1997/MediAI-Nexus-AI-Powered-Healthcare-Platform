@@ -1,0 +1,73 @@
+<div class="container mt-5">
+
+  <div class="card shadow p-5">
+
+    <h2 class="text-primary mb-4">
+
+      AI Symptom Checker
+
+    </h2>
+
+    <textarea
+
+      class="form-control mb-4"
+
+      rows="5"
+
+      placeholder="Enter symptoms..."
+
+      [(ngModel)]="symptoms">
+
+    </textarea>
+
+    <button
+
+      class="btn btn-primary"
+
+      (click)="analyzeSymptoms()">
+
+      Analyze Symptoms
+
+    </button>
+
+  </div>
+
+  <div
+    *ngIf="result"
+
+    class="card shadow p-5 mt-5">
+
+    <h3 class="text-success">
+
+      Possible Diseases
+
+    </h3>
+
+    <ul>
+
+      <li
+        *ngFor="
+          let disease of
+          result.possibleDiseases">
+
+        {{ disease }}
+
+      </li>
+
+    </ul>
+
+    <h4 class="mt-4">
+
+      Recommended Doctor:
+
+      <span class="text-danger">
+
+        {{ result.recommendedDoctor }}
+
+      </span>
+
+    </h4>
+
+  </div>
+
+</div>

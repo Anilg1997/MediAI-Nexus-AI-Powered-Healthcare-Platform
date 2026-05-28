@@ -1,0 +1,162 @@
+<div class="container mt-4">
+
+  <h2 class="text-danger mb-4">
+
+    Appointment Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addAppointment()">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Patient ID"
+
+            [(ngModel)]="appointment.patientId"
+
+            name="patientId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Doctor ID"
+
+            [(ngModel)]="appointment.doctorId"
+
+            name="doctorId">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="date"
+
+            class="form-control"
+
+            [(ngModel)]="appointment.appointmentDate"
+
+            name="appointmentDate">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Reason"
+
+            [(ngModel)]="appointment.reason"
+
+            name="reason">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-danger">
+
+        Book Appointment
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Appointments List</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Patient</th>
+
+          <th>Doctor</th>
+
+          <th>Date</th>
+
+          <th>Status</th>
+
+          <th>Reason</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let a of appointments">
+
+          <td>{{ a.id }}</td>
+
+          <td>{{ a.patientId }}</td>
+
+          <td>{{ a.doctorId }}</td>
+
+          <td>{{ a.appointmentDate }}</td>
+
+          <td>
+
+            <span
+              class="badge bg-success">
+
+              {{ a.status }}
+
+            </span>
+
+          </td>
+
+          <td>{{ a.reason }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deleteAppointment(a.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

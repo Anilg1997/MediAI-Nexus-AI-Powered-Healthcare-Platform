@@ -1,0 +1,11 @@
+.dashboard-card {
+
+  border-radius: 20px;
+
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+
+  transform: scale(1.03);
+}

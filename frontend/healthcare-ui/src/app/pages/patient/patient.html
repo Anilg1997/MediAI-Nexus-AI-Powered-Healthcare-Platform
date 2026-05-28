@@ -1,0 +1,161 @@
+<div class="container mt-4">
+
+  <h2 class="mb-4 text-primary">
+
+    Patient Management
+
+  </h2>
+
+  <div class="card shadow p-4">
+
+    <form (ngSubmit)="addPatient()">
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Patient Name"
+
+            [(ngModel)]="patient.name"
+
+            name="name">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="number"
+
+            class="form-control"
+
+            placeholder="Age"
+
+            [(ngModel)]="patient.age"
+
+            name="age">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="text"
+
+            class="form-control"
+
+            placeholder="Disease"
+
+            [(ngModel)]="patient.disease"
+
+            name="disease">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <input
+            type="email"
+
+            class="form-control"
+
+            placeholder="Email"
+
+            [(ngModel)]="patient.email"
+
+            name="email">
+
+        </div>
+
+      </div>
+
+      <button
+        class="btn btn-primary">
+
+        {{ editMode ? 'Update Patient' : 'Add Patient' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+  <div class="card shadow mt-5 p-4">
+
+    <h3>Patients List</h3>
+
+    <table
+      class="table table-bordered table-hover mt-3">
+
+      <thead class="table-dark">
+
+        <tr>
+
+          <th>ID</th>
+
+          <th>Name</th>
+
+          <th>Age</th>
+
+          <th>Disease</th>
+
+          <th>Email</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let p of patients">
+
+          <td>{{ p.id }}</td>
+
+          <td>{{ p.name }}</td>
+
+          <td>{{ p.age }}</td>
+
+          <td>{{ p.disease }}</td>
+
+          <td>{{ p.email }}</td>
+
+          <td>
+
+            <button
+
+              class="btn btn-primary btn-sm me-2"
+
+              (click)="editPatient(p)">
+
+              Edit
+
+            </button>
+
+            <button
+
+              class="btn btn-danger btn-sm"
+
+              (click)="deletePatient(p.id)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
