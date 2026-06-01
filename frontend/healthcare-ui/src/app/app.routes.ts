@@ -35,12 +35,34 @@ from './pages/files/files';
 import { PaymentComponent }
 from './pages/payment/payment';
 
+import { AiSummaryComponent } from './ai-summary/ai-summary';
+
+import { PrescriptionAnalyzerComponent }
+from './prescription-analyzer/prescription-analyzer';
+
+import { LabReportAnalyzerComponent }
+from './lab-report-analyzer/lab-report-analyzer';
+
+import { MedicalAiAssistantComponent }
+from './medical-ai-assistant/medical-ai-assistant';
+
+import {
+  authGuard
+} from './guards/auth-guard';
+
+import { ProfileComponent } from './pages/profile/profile';
+
 export const routes: Routes = [
 
   {
     path: '',
     component: LoginComponent
   },
+  {
+  path: 'login',
+  component: LoginComponent
+
+},
 
   {
     path: 'register',
@@ -49,47 +71,120 @@ export const routes: Routes = [
 
   {
     path: 'dashboard',
-    component: DashboardComponent
+    component: DashboardComponent,
+    canActivate: [
+    authGuard
+  ]
   },
 
   {
     path: 'patients',
-    component: PatientComponent
+    component: PatientComponent,
+    canActivate: [
+    authGuard
+  ]
   },
 
   {
     path: 'doctors',
-    component: DoctorComponent
+    component: DoctorComponent,
+    canActivate: [
+    authGuard
+  ]
   },
   {
   path: 'appointments',
-  component: AppointmentComponent
+  component: AppointmentComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'ai-checker',
-  component: AiCheckerComponent
+  component: AiCheckerComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'prescriptions',
-  component: PrescriptionComponent
+  component: PrescriptionComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'medical-records',
-  component: MedicalRecordComponent
+  component: MedicalRecordComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'labs',
 
-  component: LabComponent
+  component: LabComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'files',
 
-  component: FilesComponent
+  component: FilesComponent,
+  canActivate: [
+    authGuard
+  ]
 },
 {
   path: 'payments',
 
-  component: PaymentComponent
+  component: PaymentComponent,
+  canActivate: [
+    authGuard
+  ]
+},
+{
+  path: 'ai-summary',
+  component: AiSummaryComponent,
+  canActivate: [
+    authGuard
+  ]
+},
+{
+    path: 'prescription-analyzer',
+    component: PrescriptionAnalyzerComponent,
+    canActivate: [
+    authGuard
+  ]
+  },
+  {
+  path: 'lab-report-analyzer',
+  component: LabReportAnalyzerComponent,
+  canActivate: [
+    authGuard
+  ]
+},
+{
+  path: 'medical-ai-assistant',
+  component:
+    MedicalAiAssistantComponent,
+    canActivate: [
+    authGuard
+  ]
+},
+{
+  path: 'dashboard',
+  component: DashboardComponent,
+  canActivate: [
+    authGuard
+  ]
+},
+{
+  path: 'profile',
+  component: ProfileComponent,
+  canActivate: [
+    authGuard
+  ]
 }
 ];

@@ -1,0 +1,70 @@
+<div class="container mt-4">
+
+  <div class="card shadow">
+
+    <div
+      class="card-header bg-primary text-white">
+
+      <h3>
+
+        Medical AI Assistant
+
+      </h3>
+
+    </div>
+
+    <div class="card-body">
+
+      <label class="form-label">
+
+        Ask About Patient Records
+
+      </label>
+
+      <textarea
+        rows="5"
+        class="form-control"
+        [(ngModel)]="question">
+
+      </textarea>
+
+      <button
+        class="btn btn-primary mt-3"
+        (click)="askQuestion()">
+
+        Ask AI
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div
+    *ngIf="loading"
+    class="alert alert-info mt-3">
+
+    AI is analyzing records...
+
+  </div>
+
+  <div
+    *ngIf="answer"
+    class="card mt-4">
+
+    <div
+      class="card-header bg-success text-white">
+
+      AI Response
+
+    </div>
+
+    <div class="card-body">
+
+      <pre>{{answer}}</pre>
+
+    </div>
+
+  </div>
+
+</div>

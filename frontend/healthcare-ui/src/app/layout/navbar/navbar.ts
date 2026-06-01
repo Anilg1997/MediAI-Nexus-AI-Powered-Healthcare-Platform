@@ -1,76 +1,59 @@
-import { Component }
-from '@angular/core';
-
-import {
-  Router,
-  RouterLink,
-  NavigationEnd
-}
-from '@angular/router';
-
-import { CommonModule }
-from '@angular/common';
-
-import { filter }
-from 'rxjs';
+import { Component } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
-
-  selector: 'app-navbar',
-
-  standalone: true,
-
-  imports: [
-    RouterLink,
-    CommonModule
-  ],
-
-  templateUrl:
-    './navbar.html',
-
-  styleUrl:
-    './navbar.css'
+selector: 'app-navbar',
+standalone: true,
+imports: [
+CommonModule,
+RouterLink
+],
+templateUrl: './navbar.html',
+styleUrl: './navbar.css'
 })
-
 export class NavbarComponent {
 
-  showNavbar = true;
+showAiMenu = false;
+showUserMenu = false;
 
-  constructor(
-      private router: Router) {
+constructor(
+private router: Router
+) {}
 
-    this.router.events
+get isLoggedIn(): boolean {
 
-      .pipe(
 
-        filter(event =>
-          event instanceof NavigationEnd)
+return !!localStorage.getItem('token');
 
-      )
 
-      .subscribe(() => {
+}
 
-        const hiddenRoutes = [
+get username(): string {
 
-          '/',
 
-          '/register'
-        ];
+return localStorage.getItem('username') || '';
 
-        this.showNavbar =
 
-          !hiddenRoutes.includes(
+}
 
-            this.router.url
-          );
-      });
-  }
+toggleAiMenu(): void {
 
-  logout() {
 
-    localStorage.removeItem(
-      'token');
+this.showAiMenu = !this.showAiMenu;
 
-    window.location.href = '/';
-  }
+
+}
+
+logout(): void {
+
+  localStorage.clear();
+
+  this.router.navigate([
+    '/login'
+  ]);
+
+
+
+}
 }

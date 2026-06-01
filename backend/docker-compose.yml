@@ -1,14 +1,14 @@
 services:
 
   postgres:
-    image: postgres:17
+    image: pgvector/pgvector:pg17
 
     container_name: postgres-db
 
     environment:
       POSTGRES_DB: authdb
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_PASSWORD: root
 
     ports:
       - "5432:5432"
@@ -119,61 +119,61 @@ services:
     ports:
       - "8086:8086"
 
-medical-record-service:
-  build: ./medical-record-service
+  medical-record-service:
+   build: ./medical-record-service
 
-  container_name: medical-record-service
+   container_name: medical-record-service
 
-  depends_on:
-    - postgres
-    - kafka
+   depends_on:
+      - postgres
+      - kafka
 
-  ports:
+   ports:
     - "8087:8087"
 
-lab-service:
-  build: ./lab-service
+  lab-service:
+   build: ./lab-service
 
-  container_name: lab-service
+   container_name: lab-service
 
-  depends_on:
+   depends_on:
     - postgres
     - kafka
 
-  ports:
+   ports:
     - "8088:8088"
 
-notification-service:
-  build: ./notification-service
+  notification-service:
+   build: ./notification-service
 
-  container_name: notification-service
+   container_name: notification-service
 
-  depends_on:
+   depends_on:
     - kafka
 
-  ports:
+   ports:
     - "8089:8089"
 
-file-service:
-  build: ./file-service
+  file-service:
+   build: ./file-service
 
-  container_name: file-service
+   container_name: file-service
 
-  depends_on:
+   depends_on:
     - postgres
     - kafka
 
-  ports:
+   ports:
     - "8090:8090"
 
-payment-service:
-  build: ./payment-service
+  payment-service:
+   build: ./payment-service
 
-  container_name: payment-service
+   container_name: payment-service
 
-  depends_on:
+   depends_on:
     - postgres
     - kafka
 
-  ports:
+   ports:
     - "8091:8091"

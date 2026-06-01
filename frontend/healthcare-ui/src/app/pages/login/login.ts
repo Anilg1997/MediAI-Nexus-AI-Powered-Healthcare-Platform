@@ -64,26 +64,33 @@ export class LoginComponent {
       .login(data)
       .subscribe({
 
-        next: (token) => {
+       next: (token) => {
 
-          this.loading = false;
+this.loading = false;
 
-          localStorage.setItem(
-            'token',
-            token
-          );
+localStorage.setItem(
+'token',
+token
+);
 
-          this.successMessage =
-            'Login Successful';
+localStorage.setItem(
+'username',
+this.email
+);
 
-          setTimeout(() => {
+this.successMessage =
+'Login Successful';
 
-            this.router.navigate([
-              '/dashboard'
-            ]);
+setTimeout(() => {
 
-          }, 1000);
-        },
+this.router.navigate([
+  '/dashboard'
+]);
+
+
+}, 1000);
+}
+,
 
         error: (error) => {
 

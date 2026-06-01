@@ -1,0 +1,68 @@
+<div class="container mt-4">
+
+  <div class="card shadow">
+
+    <div class="card-header bg-primary text-white">
+
+      <h3>
+
+        Prescription Analyzer
+
+      </h3>
+
+    </div>
+
+    <div class="card-body">
+
+      <label class="form-label">
+
+        Enter Prescription
+
+      </label>
+
+      <textarea
+        rows="10"
+        class="form-control"
+        [(ngModel)]="prescription">
+
+      </textarea>
+
+      <button
+        class="btn btn-success mt-3"
+        (click)="analyze()">
+
+        Analyze Prescription
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <div
+    *ngIf="loading"
+    class="alert alert-info mt-3">
+
+    AI is analyzing prescription...
+
+  </div>
+
+  <div
+    *ngIf="result"
+    class="card mt-4 shadow">
+
+    <div class="card-header bg-success text-white">
+
+      Analysis Result
+
+    </div>
+
+    <div class="card-body">
+
+      <pre>{{result}}</pre>
+
+    </div>
+
+  </div>
+
+</div>

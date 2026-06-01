@@ -11,7 +11,6 @@ public class FileKafkaProducer {
             kafkaTemplate;
 
     public FileKafkaProducer(
-
             KafkaTemplate<String, String>
                     kafkaTemplate) {
 
@@ -20,10 +19,10 @@ public class FileKafkaProducer {
     }
 
     public void sendFileEvent(
-            String message) {
+            String filePath) {
 
         kafkaTemplate.send(
                 "file-topic",
-                message);
+                filePath);
     }
 }

@@ -1,14 +1,16 @@
-.navbar {
-
-  padding: 15px;
+.dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
 }
 
-.nav-link {
+.navbar-nav .nav-link {
+    cursor: pointer;
+}.dropdown-menu-end {
 
-  font-size: 18px;
-}
+    right: 0;
 
-.navbar-brand {
-
-  font-size: 24px;
+    left: auto;
 }

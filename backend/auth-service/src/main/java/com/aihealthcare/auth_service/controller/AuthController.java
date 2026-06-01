@@ -6,6 +6,7 @@ import com.aihealthcare.auth_service.entity.User;
 import com.aihealthcare.auth_service.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -31,6 +32,7 @@ public class AuthController {
     }
 
     @GetMapping("/admin")
+    @PreAuthorize("hasRole('ADMIN')")
     public String admin() {
 
         return "Welcome Admin";
@@ -41,4 +43,27 @@ public class AuthController {
 
         return "Welcome Authenticated User";
     }
+
+    @GetMapping("/doctor")
+    @PreAuthorize("hasRole('DOCTOR')")
+    public String doctor() {
+
+        return "Welcome Doctor";
+    }
+
+    @GetMapping("/patient")
+    @PreAuthorize("hasRole('PATIENT')")
+    public String patient() {
+
+        return "Welcome Patient";
+    }
+
+    @GetMapping("/lab")
+    @PreAuthorize("hasRole('LAB_TECHNICIAN')")
+    public String lab() {
+
+        return "Welcome Lab Technician";
+    }
+
+
 }

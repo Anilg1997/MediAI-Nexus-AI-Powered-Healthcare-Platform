@@ -1,179 +1,284 @@
 <nav
-  *ngIf="showNavbar"
-
   class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
 
   <div class="container-fluid">
 
-    <a
-      class="navbar-brand fw-bold fs-3"
+```
+<a
+  class="navbar-brand fw-bold fs-3"
+  routerLink="/dashboard">
 
-      routerLink="/dashboard">
+  AI Healthcare
 
-      AI Healthcare
+</a>
 
-    </a>
+<button
+  class="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#navbarNav">
 
-    <button
-      class="navbar-toggler"
+  <span class="navbar-toggler-icon"></span>
 
-      type="button"
+</button>
 
-      data-bs-toggle="collapse"
+<div
+  class="collapse navbar-collapse"
+  id="navbarNav">
 
-      data-bs-target="#navbarNav">
+  <ul
+    *ngIf="isLoggedIn"
+    class="navbar-nav me-auto">
 
-      <span
-        class="navbar-toggler-icon">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard">
+        Dashboard
+      </a>
+    </li>
 
-      </span>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/patients">
+        Patients
+      </a>
+    </li>
 
-    </button>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/doctors">
+        Doctors
+      </a>
+    </li>
 
-    <div
-      class="collapse navbar-collapse"
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/appointments">
+        Appointments
+      </a>
+    </li>
 
-      id="navbarNav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/prescriptions">
+        Prescriptions
+      </a>
+    </li>
 
-      <ul class="navbar-nav me-auto">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/medical-records">
+        Medical Records
+      </a>
+    </li>
 
-        <li class="nav-item">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/labs">
+        Labs
+      </a>
+    </li>
 
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/files">
+        Files
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/payments">
+        Payments
+      </a>
+    </li>
+
+    <li class="nav-item dropdown position-relative">
+
+      <a
+        class="nav-link"
+        (click)="toggleAiMenu()"
+        style="cursor:pointer">
+
+        AI Tools ▼
+
+      </a>
+
+      <ul
+        *ngIf="showAiMenu"
+        class="dropdown-menu show">
+
+        <li>
           <a
-            class="nav-link"
-
-            routerLink="/dashboard">
-
-            Dashboard
-
-          </a>
-
-        </li>
-
-        <li class="nav-item">
-
-          <a
-            class="nav-link"
-
-            routerLink="/patients">
-
-            Patients
-
-          </a>
-
-        </li>
-
-        <li class="nav-item">
-
-          <a
-            class="nav-link"
-
-            routerLink="/doctors">
-
-            Doctors
-
-          </a>
-
-        </li>
-
-        <li class="nav-item">
-
-          <a
-            class="nav-link"
-
-            routerLink="/appointments">
-
-            Appointments
-
-          </a>
-
-        </li>
-
-        <li class="nav-item">
-
-          <a
-            class="nav-link"
-
-            routerLink="/prescriptions">
-
-            Prescriptions
-
-          </a>
-
-        </li>
-
-        <li class="nav-item">
-
-          <a
-            class="nav-link"
-
+            class="dropdown-item"
             routerLink="/ai-checker">
 
             AI Checker
 
           </a>
-
         </li>
-        <li class="nav-item">
 
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/ai-summary">
+
+            AI Summary
+
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/prescription-analyzer">
+
+            Prescription Analyzer
+
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="dropdown-item"
+            routerLink="/lab-report-analyzer">
+
+            Lab Report Analyzer
+
+          </a>
+        </li>
+<li>
   <a
-    class="nav-link"
+    class="dropdown-item"
+    routerLink="/medical-ai-assistant">
 
-    routerLink="/medical-records">
-
-    Medical Records
+    Medical AI Assistant
 
   </a>
-
-</li>
-<li class="nav-item">
-
-  <a
-    class="nav-link"
-
-    routerLink="/labs">
-
-    Labs
-
-  </a>
-
-</li><li class="nav-item">
-
-  <a
-    class="nav-link"
-
-    routerLink="/files">
-
-    Files
-
-  </a>
-
-</li>
-<li class="nav-item">
-
-  <a
-    class="nav-link"
-
-    routerLink="/payments">
-
-    Payments
-
-  </a>
-
 </li>
       </ul>
 
-      <button
+  </ul>
 
-        class="btn btn-danger"
+  <div class="d-flex align-items-center">
 
-        (click)="logout()">
+    <ng-container *ngIf="!isLoggedIn">
 
-        Logout
+      <a
+  routerLink="/login"
+  class="btn btn-outline-light me-2">
 
-      </button>
+  Login
 
-    </div>
+</a>
+
+<a
+  routerLink="/register"
+  class="btn btn-success">
+
+  Register
+
+</a>
+    </ng-container>
+
+    <ng-container *ngIf="isLoggedIn">
+
+     <div class="dropdown position-relative">
+
+  <button
+    class="btn btn-outline-light"
+    (click)="showUserMenu = !showUserMenu">
+
+    {{ username }} ▼
+
+  </button>
+
+  <ul
+    *ngIf="showUserMenu"
+    class="dropdown-menu show dropdown-menu-end">
+
+    <li>
+
+      <div class="d-flex align-items-center">
+
+  <button
+    class="btn btn-light me-3 position-relative">
+
+    🔔
+
+    <span
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+      3
+
+    </span>
+
+  </button>
+
+  <div class="dropdown">
+
+    <button
+      class="btn btn-light dropdown-toggle"
+      type="button"
+      data-bs-toggle="dropdown">
+
+      👤 {{ username }}
+
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+
+      <li>
+
+        <a
+          class="dropdown-item"
+          routerLink="/profile">
+
+          My Profile
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <a
+          class="dropdown-item"
+          routerLink="/settings">
+
+          Settings
+
+        </a>
+
+      </li>
+
+      <li>
+
+        <hr class="dropdown-divider">
+
+      </li>
+
+      <li>
+
+        <a
+          class="dropdown-item text-danger"
+          (click)="logout()">
+
+          Logout
+
+        </a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+    </li>
+
+  </ul>
+
+</div>
+
+    </ng-container>
+
+  </div>
+
+</div>
+
 
   </div>
 

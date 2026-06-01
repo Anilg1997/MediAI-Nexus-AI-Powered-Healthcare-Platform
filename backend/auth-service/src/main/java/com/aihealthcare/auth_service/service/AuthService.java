@@ -37,7 +37,7 @@ public class AuthService {
         user.setPassword(
                 passwordEncoder.encode(request.getPassword()));
 
-        user.setRole("USER");
+        user.setRole("PATIENT");
 
         userRepository.save(user);
 
@@ -59,7 +59,9 @@ public class AuthService {
                     user.get().getPassword())) {
 
                 return jwtService.generateToken(
-                        user.get().getEmail());
+                        user.get().getEmail(),
+                        user.get().getRole());
+
             }
         }
 
