@@ -11,12 +11,14 @@ public class EmbeddingService {
     public EmbeddingService(
             EmbeddingModel embeddingModel) {
 
-        this.embeddingModel = embeddingModel;
+        this.embeddingModel =
+                embeddingModel;
     }
 
     public float[] createEmbedding(
             String text) {
 
-        return embeddingModel.embed(text);
+        return embeddingModel
+                .embed(text);
     }
 }

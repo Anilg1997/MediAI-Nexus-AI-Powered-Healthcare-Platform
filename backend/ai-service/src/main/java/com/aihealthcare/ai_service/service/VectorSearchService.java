@@ -24,6 +24,10 @@ public class VectorSearchService {
     findRelevantDocuments(
             String question) {
 
+        // Placeholder
+        // Later replace with
+        // pgvector similarity search
+
         return repository
                 .findTop5ByOrderByIdDesc();
     }

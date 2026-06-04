@@ -10,10 +10,11 @@ import java.util.Arrays;
 @Service
 public class DocumentService {
 
+    private final DocumentRepository
+            repository;
 
-    private final DocumentRepository repository;
-
-    private final EmbeddingService embeddingService;
+    private final EmbeddingService
+            embeddingService;
 
     private final DocumentEmbeddingService
             documentEmbeddingService;
@@ -23,8 +24,12 @@ public class DocumentService {
             EmbeddingService embeddingService,
             DocumentEmbeddingService documentEmbeddingService) {
 
-        this.repository = repository;
-        this.embeddingService = embeddingService;
+        this.repository =
+                repository;
+
+        this.embeddingService =
+                embeddingService;
+
         this.documentEmbeddingService =
                 documentEmbeddingService;
     }
@@ -36,23 +41,25 @@ public class DocumentService {
         DocumentData doc =
                 new DocumentData();
 
-        doc.setFileName(fileName);
+        doc.setFileName(
+                fileName);
 
-        doc.setContent(content);
+        doc.setContent(
+                content);
 
         DocumentData savedDoc =
                 repository.save(doc);
 
-        float[] vector =
-                embeddingService.createEmbedding(
-                        content);
+        float[] embedding =
+                embeddingService
+                        .createEmbedding(
+                                content);
 
         documentEmbeddingService
                 .saveEmbedding(
                         savedDoc.getId(),
                         content,
-                        Arrays.toString(vector));
+                        Arrays.toString(
+                                embedding));
     }
-
-
 }

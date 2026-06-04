@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.aihealthcare.ai_service.entity.DocumentEmbedding;
 import com.aihealthcare.ai_service.repository.DocumentEmbeddingRepository;
 import java.util.List;
-
+import com.aihealthcare.ai_service.entity.DocumentEmbedding;
 @Service
 public class AIService {
 
@@ -18,12 +18,14 @@ public class AIService {
     private final DocumentRepository documentRepository;
     private final DocumentEmbeddingRepository
             embeddingRepository;
+    private final RetrievalService retrievalService;
 
     public AIService(
             ChatClient.Builder builder,
             DocumentRepository documentRepository,
             DocumentEmbeddingRepository embeddingRepository,
-            VectorSearchService vectorSearchService) {
+            VectorSearchService vectorSearchService,
+        RetrievalService retrievalService){
 
         this.chatClient =
                 builder.build();
@@ -36,6 +38,7 @@ public class AIService {
 
         this.vectorSearchService =
                 vectorSearchService;
+        this.retrievalService=retrievalService;
     }
 
 
@@ -67,28 +70,34 @@ public class AIService {
     public String ragChat(
             String question) {
 
-        List<DocumentData> docs =
-                documentRepository.findAll();
+        List<DocumentEmbedding> docs =
+                retrievalService
+                        .retrieveTopDocuments(
+                                question);
 
         StringBuilder context =
                 new StringBuilder();
 
-        docs.stream()
-                .limit(5)
-                .forEach(doc ->
-                        context.append(doc.getContent())
-                                .append("\n"));
+        docs.forEach(doc ->
+
+                context.append(
+                                doc.getContent())
+                        .append("\n")
+        );
 
         String prompt =
                 """
                 You are a healthcare assistant.
     
-                Answer ONLY using the medical documents below.
+                Answer ONLY using
+                the medical records below.
     
-                Context:
+                Records:
+    
                 %s
     
                 Question:
+    
                 %s
                 """
                         .formatted(
