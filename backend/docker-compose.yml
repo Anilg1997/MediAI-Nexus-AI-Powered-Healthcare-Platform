@@ -51,6 +51,19 @@ services:
 
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
+  api-gateway:
+    build: ./api-gateway
+
+    container_name: api-gateway
+
+    depends_on:
+      - auth-service
+      - patient-service
+      - doctor-service
+
+    ports:
+      - "8080:8080"
+
   auth-service:
     build: ./auth-service
 
