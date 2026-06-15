@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="'Segoe UI','Inter',sans-serif">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd"/><stop offset="100%" stop-color="#0a58ca"/>
+    </linearGradient>
+    <linearGradient id="userBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd"/><stop offset="100%" stop-color="#0a58ca"/>
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#667eea"/><stop offset="100%" stop-color="#764ba2"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.08"/></filter>
+  </defs>
+  <rect width="1100" height="750" fill="#f5f7fb"/>
+
+  <!-- Header -->
+  <rect width="1100" height="56" fill="#212529"/>
+  <text x="24" y="36" fill="white" font-size="20" font-weight="700">🏥 AI Healthcare</text>
+
+  <!-- RAG Chat Interface -->
+  <rect x="30" y="76" rx="16" ry="16" width="730" height="640" fill="white" filter="url(#shadow)"/>
+  <!-- Chat Header -->
+  <rect x="30" y="76" rx="16" ry="16" width="730" height="64" fill="url(#headerGrad)"/>
+  <text x="30" y="140" rx="16" ry="16" width="730" height="0" fill="url(#headerGrad)"/>
+  <circle cx="62" cy="108" r="20" fill="rgba(255,255,255,0.2)"/>
+  <text x="62" y="114" font-size="20" fill="white" text-anchor="middle">🤖</text>
+  <text x="92" y="106" font-size="15" fill="white" font-weight="600">AI Medical Assistant (RAG)</text>
+  <text x="92" y="126" font-size="11" fill="rgba(255,255,255,0.8)">Powered by Ollama + Llama 3.2 + Medical Knowledge Base</text>
+
+  <!-- Chat Messages -->
+  <!-- AI Welcome -->
+  <circle cx="62" cy="180" r="16" fill="url(#aiGrad)"/>
+  <text x="62" y="186" font-size="14" fill="white" text-anchor="middle">🤖</text>
+  <rect x="86" y="166" width="450" height="60" rx="16" fill="#f0f2f5"/>
+  <text x="102" y="186" font-size="13" fill="#333">Hello! I'm your AI Medical Assistant. I can help</text>
+  <text x="102" y="204" font-size="13" fill="#333">with symptom checking, medical info, prescriptions &amp; more.</text>
+  <text x="102" y="220" font-size="11" fill="#0d6efd">Analyzing 1,247 medical documents in knowledge base...</text>
+
+  <!-- User message -->
+  <circle cx="712" cy="270" r="16" fill="url(#userBubble)"/>
+  <text x="712" y="276" font-size="14" fill="white" text-anchor="middle">👤</text>
+  <rect x="360" y="256" width="340" height="60" rx="16" fill="url(#userBubble)"/>
+  <text x="376" y="276" font-size="13" fill="white">I've been having persistent headaches,</text>
+  <text x="376" y="294" font-size="13" fill="white">fatigue, and occasional dizziness for the</text>
+  <text x="376" y="312" font-size="13" fill="white">past two weeks. What could this be?</text>
+
+  <!-- AI Response with RAG context -->
+  <circle cx="62" cy="370" r="16" fill="url(#aiGrad)"/>
+  <text x="62" y="376" font-size="14" fill="white" text-anchor="middle">🤖</text>
+  <rect x="86" y="346" width="650" height="160" rx="16" fill="#f0f2f5"/>
+  <rect x="86" y="346" width="650" height="4" fill="url(#aiGrad)"/>
+  <text x="102" y="370" font-size="13" fill="#333" font-weight="600">Based on your symptoms, here's my analysis:</text>
+  <text x="102" y="392" font-size="13" fill="#333">📋 Possible conditions (consult a doctor for diagnosis):</text>
+  <text x="102" y="412" font-size="12" fill="#333">1. <tspan fill="#f57c00" font-weight="600">Tension Headaches</tspan> — Most common, often stress-related</text>
+  <text x="102" y="430" font-size="12" fill="#333">2. <tspan fill="#f57c00" font-weight="600">Anemia</tspan> — Fatigue + dizziness could indicate low iron</text>
+  <text x="102" y="448" font-size="12" fill="#333">3. <tspan fill="#f57c00" font-weight="600">Migraine</tspan> — Especially if headaches are one-sided</text>
+  <text x="102" y="472" font-size="11" fill="#0d6efd">📄 Retrieved from: Medical Reference Database (3 documents matched)</text>
+  <text x="102" y="490" font-size="11" fill="#0d6efd">🔗 Sources: WHO Headache Guidelines, Clinical Medicine Textbook, Patient Care Manual</text>
+
+  <!-- User follow-up -->
+  <circle cx="712" cy="550" r="16" fill="url(#userBubble)"/>
+  <text x="712" y="556" font-size="14" fill="white" text-anchor="middle">👤</text>
+  <rect x="460" y="536" width="240" height="50" rx="16" fill="url(#userBubble)"/>
+  <text x="476" y="556" font-size="13" fill="white">Should I see a doctor or try home</text>
+  <text x="476" y="574" font-size="13" fill="white">remedies first?</text>
+
+  <!-- AI typing -->
+  <circle cx="62" cy="626" r="16" fill="url(#aiGrad)"/>
+  <text x="62" y="632" font-size="14" fill="white" text-anchor="middle">🤖</text>
+  <rect x="86" y="610" width="80" height="36" rx="16" fill="#f0f2f5"/>
+  <circle cx="106" cy="628" r="4" fill="#667eea"><animate attributeName="cy" values="628;620;628" dur="1.4s" repeatCount="indefinite"/></circle>
+  <circle cx="120" cy="628" r="4" fill="#667eea"><animate attributeName="cy" values="628;620;628" dur="1.4s" begin="0.2s" repeatCount="indefinite"/></circle>
+  <circle cx="134" cy="628" r="4" fill="#667eea"><animate attributeName="cy" values="628;620;628" dur="1.4s" begin="0.4s" repeatCount="indefinite"/></circle>
+
+  <!-- Input area -->
+  <line x1="46" y1="660" x2="744" y2="660" stroke="#e0e0e0" stroke-width="1"/>
+  <rect x="46" y="670" rx="25" ry="25" width="620" height="40" fill="white" stroke="#e0e0e0" stroke-width="1.5"/>
+  <text x="66" y="696" font-size="13" fill="#999">Describe your symptoms or ask a medical question...</text>
+  <circle cx="718" cy="690" r="22" fill="url(#headerGrad)"/>
+  <polygon points="712,690 724,683 724,697" fill="white"/>
+
+  <!-- Right Panel: RAG Knowledge Base Status -->
+  <rect x="780" y="76" rx="16" ry="16" width="290" height="300" fill="white" filter="url(#shadow)"/>
+  <text x="800" y="106" font-size="14" fill="#1a1a2e" font-weight="600">📚 Medical Knowledge Base</text>
+  <rect x="800" y="120" width="250" height="8" rx="4" fill="#e0e0e0"/>
+  <rect x="800" y="120" width="200" height="8" rx="4" fill="#0d6efd"/>
+  <text x="800" y="144" font-size="12" fill="#666">1,247 medical documents indexed</text>
+  <text x="800" y="162" font-size="12" fill="#666">• General Medicine: 342</text>
+  <text x="800" y="180" font-size="12" fill="#666">• Cardiology: 156</text>
+  <text x="800" y="198" font-size="12" fill="#666">• Neurology: 89</text>
+  <text x="800" y="216" font-size="12" fill="#666">• Pediatrics: 203</text>
+  <text x="800" y="234" font-size="12" fill="#666">• Pharmacology: 178</text>
+  <text x="800" y="252" font-size="12" fill="#666">• Symptom Checker: 279</text>
+  <line x1="800" y1="268" x2="1050" y2="268" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="800" y="290" font-size="12" fill="#0d6efd" font-weight="500">🔄 Last updated: Today, 10:30 AM</text>
+  <text x="800" y="310" font-size="11" fill="#666">Embedding model: nomic-embed-text</text>
+
+  <!-- AI Features panel -->
+  <rect x="780" y="396" rx="16" ry="16" width="290" height="320" fill="white" filter="url(#shadow)"/>
+  <text x="800" y="426" font-size="14" fill="#1a1a2e" font-weight="600">🧠 AI Capabilities</text>
+  <rect x="800" y="442" rx="8" ry="8" width="250" height="36" fill="#e3f2fd"/>
+  <text x="816" y="458" font-size="12" fill="#0d6efd">🩺 Symptom Checker</text>
+  <rect x="800" y="484" rx="8" ry="8" width="250" height="36" fill="#e8f5e9"/>
+  <text x="816" y="500" font-size="12" fill="#388e3c">📋 Report Summarization</text>
+  <rect x="800" y="526" rx="8" ry="8" width="250" height="36" fill="#fff3e0"/>
+  <text x="816" y="542" font-size="12" fill="#f57c00">💊 Prescription Analyzer</text>
+  <rect x="800" y="568" rx="8" ry="8" width="250" height="36" fill="#fce4ec"/>
+  <text x="816" y="584" font-size="12" fill="#d32f2f">🔬 Lab Report Analyzer</text>
+  <rect x="800" y="610" rx="8" ry="8" width="250" height="36" fill="#f3e5f5"/>
+  <text x="816" y="626" font-size="12" fill="#7b1fa2">🤖 Agentic AI Workflows</text>
+  <rect x="800" y="652" rx="8" ry="8" width="250" height="36" fill="#e0f2f1"/>
+  <text x="816" y="668" font-size="12" fill="#00796b">📊 RAG-based Q&amp;A</text>
+</svg>

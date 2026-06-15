@@ -15,6 +15,7 @@ Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, A
 | **Doctors** — Add/edit doctor management with specialization | ![Doctors](screenshots/doctors.svg) |
 | **Appointments** — Book appointments with status badges (confirmed, pending, completed) | ![Appointments](screenshots/appointments.svg) |
 | **AI Checker** — Symptom checker with AI analysis results | ![AI Checker](screenshots/ai-checker.svg) |
+| **AI Chat (RAG)** — RAG-powered medical assistant with knowledge base Q&A | ![AI Chat](screenshots/ai-chat.svg) |
 
 ## 🚀 Project Overview
 
