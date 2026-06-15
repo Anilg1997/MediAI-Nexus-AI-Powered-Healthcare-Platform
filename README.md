@@ -4,6 +4,18 @@ Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, A
 
 ---
 
+## 📸 Screenshots
+
+| Page | Preview |
+|------|---------|
+| **Login** — Bootstrap-themed login with email/password | ![Login](screenshots/login.svg) |
+| **Register** — Account creation form | ![Register](screenshots/register.svg) |
+| **Dashboard** — Hero section, quick access cards, stats overview, modules, AI tools | ![Dashboard](screenshots/dashboard.svg) |
+| **Patients** — Add/edit patient form with data table listing | ![Patients](screenshots/patients.svg) |
+| **Doctors** — Add/edit doctor management with specialization | ![Doctors](screenshots/doctors.svg) |
+| **Appointments** — Book appointments with status badges (confirmed, pending, completed) | ![Appointments](screenshots/appointments.svg) |
+| **AI Checker** — Symptom checker with AI analysis results | ![AI Checker](screenshots/ai-checker.svg) |
+
 ## 🚀 Project Overview
 
 AI Healthcare Platform is a modern healthcare management system designed to streamline patient care, hospital operations, and medical decision support using Artificial Intelligence.
