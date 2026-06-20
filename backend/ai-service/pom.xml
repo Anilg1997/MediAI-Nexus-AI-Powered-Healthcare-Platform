@@ -29,11 +29,13 @@
 
     <name>ai-service</name>
 
-    <description>AI Service for Healthcare Platform</description>
+    <description>AI Service for Healthcare Platform with RAG, Agentic AI, and MCP</description>
 
     <properties>
 
         <java.version>21</java.version>
+
+        <langchain4j.version>1.0.0-beta4</langchain4j.version>
 
     </properties>
 
@@ -43,6 +45,13 @@
                 <groupId>org.springframework.ai</groupId>
                 <artifactId>spring-ai-bom</artifactId>
                 <version>1.0.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>dev.langchain4j</groupId>
+                <artifactId>langchain4j-bom</artifactId>
+                <version>${langchain4j.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -80,45 +89,83 @@
             <artifactId>spring-boot-starter-security</artifactId>
 
         </dependency>
+
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
-        <!-- Spring AI OpenAI -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+
+        <!-- Spring AI Ollama -->
+
         <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-starter-model-ollama</artifactId>
         </dependency>
 
+        <!-- Spring AI Vector Store (pgvector) -->
+
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-vector-store-pgvector</artifactId>
+        </dependency>
+
+        <!-- Spring Data JPA -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
+
+        <!-- PostgreSQL with pgvector -->
+
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-model-ollama</artifactId>
-        </dependency>
+
+        <!-- PDF Processing -->
+
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
             <version>3.0.5</version>
         </dependency>
+
+        <!-- LangChain4j Core -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+        </dependency>
+
+        <!-- LangChain4j Ollama Integration -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-ollama</artifactId>
+        </dependency>
+
+        <!-- LangChain4j Spring Boot Starter -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-spring-boot-starter</artifactId>
+        </dependency>
+
+        <!-- LangChain4j RAG -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-rag</artifactId>
+        </dependency>
+
+        <!-- LangChain4j MCP -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-mcp</artifactId>
+        </dependency>
+
         <!-- Swagger -->
 
         <dependency>
@@ -175,27 +222,72 @@
 
                 <artifactId>maven-compiler-plugin</artifactId>
 
-                <configuration>
+                <executions>
 
-                    <source>21</source>
+                    <execution>
 
-                    <target>21</target>
+                        <id>default-compile</id>
 
-                    <annotationProcessorPaths>
+                        <phase>compile</phase>
 
-                        <path>
+                        <goals>
 
-                            <groupId>org.projectlombok</groupId>
+                            <goal>compile</goal>
 
-                            <artifactId>lombok</artifactId>
+                        </goals>
 
-                            <version>1.18.38</version>
+                        <configuration>
 
-                        </path>
+                            <annotationProcessorPaths>
 
-                    </annotationProcessorPaths>
+                                <path>
 
-                </configuration>
+                                    <groupId>org.projectlombok</groupId>
+
+                                    <artifactId>lombok</artifactId>
+
+                                    <version>1.18.38</version>
+
+                                </path>
+
+                            </annotationProcessorPaths>
+
+                        </configuration>
+
+                    </execution>
+                    <execution>
+
+                        <id>default-testCompile</id>
+
+                        <phase>test-compile</phase>
+
+                        <goals>
+
+                            <goal>testCompile</goal>
+
+                        </goals>
+
+                        <configuration>
+
+                            <annotationProcessorPaths>
+
+                                <path>
+
+                                    <groupId>org.projectlombok</groupId>
+
+                                    <artifactId>lombok</artifactId>
+
+                                    <version>1.18.38</version>
+
+                                </path>
+
+                            </annotationProcessorPaths>
+
+                        </configuration>
+
+                    </execution>
+
+                </executions>
 
             </plugin>
 

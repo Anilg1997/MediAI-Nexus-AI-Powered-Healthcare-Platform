@@ -6,12 +6,32 @@ services:
     container_name: postgres-db
 
     environment:
-      POSTGRES_DB: authdb
+      POSTGRES_DB: aihealthcare
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
 
     ports:
       - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
 
   zookeeper:
     image: confluentinc/cp-zookeeper:7.5.0
@@ -117,8 +137,18 @@ services:
 
     container_name: ai-service
 
+    depends_on:
+      - postgres
+      - ollama
+      - kafka
+
     ports:
       - "8085:8085"
+      - "8093:8093"
+    environment:
+      - SPRING_AI_OLLAMA_BASE_URL=http://ollama:11434
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/aihealthcare
+      - LANGCHAIN4J_OLLAMA_BASE_URL=http://ollama:11434
 
   prescription-service:
     build: ./prescription-service
@@ -179,14 +209,18 @@ services:
    ports:
     - "8090:8090"
 
-  payment-service:
-   build: ./payment-service
+   payment-service:
+    build: ./payment-service
 
-   container_name: payment-service
+    container_name: payment-service
 
-   depends_on:
-    - postgres
-    - kafka
+    depends_on:
+     - postgres
+     - kafka
 
-   ports:
-    - "8091:8091"
+    ports:
+     - "8091:8091"
+
+volumes:
+  postgres_data:
+  ollama_data:

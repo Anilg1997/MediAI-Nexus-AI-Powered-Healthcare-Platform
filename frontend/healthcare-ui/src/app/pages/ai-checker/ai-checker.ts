@@ -1,17 +1,12 @@
-import { Component, inject }
-from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { CommonModule }
-from '@angular/common';
+import { CommonModule } from '@angular/common';
 
-import { FormsModule }
-from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
-import { AiService }
-from '../../services/ai.service';
+import { AiService } from '../../services/ai.service';
 
 @Component({
-
   selector: 'app-ai-checker',
 
   standalone: true,
@@ -21,11 +16,9 @@ from '../../services/ai.service';
     FormsModule
   ],
 
-  templateUrl:
-    './ai-checker.html',
+  templateUrl: './ai-checker.html',
 
-  styleUrl:
-    './ai-checker.css'
+  styleUrl: './ai-checker.css'
 })
 
 export class AiCheckerComponent {
@@ -37,24 +30,36 @@ export class AiCheckerComponent {
 
   result: any = null;
 
+  loading = false;
+
+  error = '';
+
   analyzeSymptoms() {
+    if (!this.symptoms.trim()) {
+      this.error = 'Please enter symptoms';
+      return;
+    }
 
-    this.aiService
+    this.loading = true;
+    this.error = '';
+    this.result = null;
 
-      .analyzeSymptoms({
-
-        symptoms:
-          this.symptoms
-
-      })
-
+    this.aiService.analyzeSymptoms({ symptoms: this.symptoms })
       .subscribe({
-
         next: (response) => {
-
-          this.result =
-            response;
+          this.result = response;
+          this.loading = false;
+        },
+        error: (error) => {
+          this.error = 'Failed to analyze symptoms. Please try again.';
+          this.loading = false;
         }
       });
+  }
+
+  clearResult() {
+    this.result = null;
+    this.error = '';
+    this.symptoms = '';
   }
 }

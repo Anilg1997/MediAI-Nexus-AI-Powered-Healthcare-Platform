@@ -8,17 +8,11 @@ public class EmbeddingService {
 
     private final EmbeddingModel embeddingModel;
 
-    public EmbeddingService(
-            EmbeddingModel embeddingModel) {
-
-        this.embeddingModel =
-                embeddingModel;
+    public EmbeddingService(EmbeddingModel embeddingModel) {
+        this.embeddingModel = embeddingModel;
     }
 
-    public float[] createEmbedding(
-            String text) {
-
-        return embeddingModel
-                .embed(text);
+    public float[] createEmbedding(String text) {
+        return embeddingModel.embed(text);
     }
 }

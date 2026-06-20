@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+
+import { AiService } from '../services/ai.service';
 
 @Component({
   selector: 'app-lab-report-analyzer',
@@ -15,36 +18,36 @@ export class LabReportAnalyzerComponent {
   report = '';
   result = '';
   loading = false;
+  error = '';
 
-  constructor(private http: HttpClient) {}
+  private aiService = inject(AiService);
 
   analyze(): void {
+    if (!this.report.trim()) {
+      this.error = 'Please enter lab report details';
+      return;
+    }
 
     this.loading = true;
+    this.error = '';
+    this.result = '';
 
-    this.http.post(
-      'http://localhost:8080/api/ai/analyze-lab',
-      {
-        report: this.report
-      },
-      {
-        responseType: 'text'
-      }
-    ).subscribe({
+    this.aiService.analyzeLabReport(this.report)
+      .subscribe({
+        next: (response) => {
+          this.result = response;
+          this.loading = false;
+        },
+        error: (error) => {
+          this.error = 'Failed to analyze lab report. Please try again.';
+          this.loading = false;
+        }
+      });
+  }
 
-      next: (response) => {
-
-        this.result = response;
-
-        this.loading = false;
-      },
-
-      error: () => {
-
-        this.result = 'Failed to analyze report';
-
-        this.loading = false;
-      }
-    });
+  clearResult() {
+    this.result = '';
+    this.error = '';
+    this.report = '';
   }
 }

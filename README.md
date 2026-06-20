@@ -1,6 +1,6 @@
 # 🏥 AI Healthcare Platform
 
-Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, Angular, PostgreSQL, Kafka, Docker, AWS, and Generative AI technologies including RAG (Retrieval-Augmented Generation), Agent AI, and Agentic AI.
+Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, Angular, PostgreSQL with pgvector, Kafka, Docker, and Generative AI technologies including RAG (Retrieval-Augmented Generation), Agent AI, and Agentic AI.
 
 ---
 
@@ -16,6 +16,8 @@ Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, A
 | **Appointments** — Book appointments with status badges (confirmed, pending, completed) | ![Appointments](screenshots/appointments.svg) |
 | **AI Checker** — Symptom checker with AI analysis results | ![AI Checker](screenshots/ai-checker.svg) |
 | **AI Chat (RAG)** — RAG-powered medical assistant with knowledge base Q&A | ![AI Chat](screenshots/ai-chat.svg) |
+
+---
 
 ## 🚀 Project Overview
 
@@ -143,7 +145,7 @@ Capabilities:
 Analyzes prescriptions and explains:
 
 * Medicines
-* Purpose
+* Purpose of each medicine
 * Dosage Information
 * Precautions
 
@@ -273,7 +275,7 @@ Agentic Workflow:
 
 ## Database
 
-* PostgreSQL
+* PostgreSQL with pgvector
 
 ## Messaging
 

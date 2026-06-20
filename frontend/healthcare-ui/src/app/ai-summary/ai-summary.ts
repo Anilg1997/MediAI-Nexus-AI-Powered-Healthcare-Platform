@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+
+import { AiService } from '../services/ai.service';
 
 @Component({
   selector: 'app-ai-summary',
@@ -18,38 +21,36 @@ export class AiSummaryComponent {
   report = '';
   summary = '';
   loading = false;
+  error = '';
 
-  constructor(
-    private http: HttpClient
-  ) {}
+  private aiService = inject(AiService);
 
   summarize(): void {
+    if (!this.report.trim()) {
+      this.error = 'Please enter a report to summarize';
+      return;
+    }
 
     this.loading = true;
+    this.error = '';
+    this.summary = '';
 
-    this.http.post(
-      'http://localhost:8080/api/ai/summarize',
-      {
-        report: this.report
-      },
-      {
-        responseType: 'text'
-      }
-    ).subscribe({
+    this.aiService.summarizeReport(this.report)
+      .subscribe({
+        next: (response) => {
+          this.summary = response;
+          this.loading = false;
+        },
+        error: (error) => {
+          this.error = 'Failed to summarize report. Please try again.';
+          this.loading = false;
+        }
+      });
+  }
 
-      next: (response) => {
-
-        this.summary = response;
-
-        this.loading = false;
-      },
-
-      error: (error) => {
-
-        console.error(error);
-
-        this.loading = false;
-      }
-    });
+  clearSummary() {
+    this.summary = '';
+    this.error = '';
+    this.report = '';
   }
 }

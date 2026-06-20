@@ -169,13 +169,14 @@ export const routes: Routes = [
   path: 'medical-ai-assistant',
   component:
     MedicalAiAssistantComponent,
-    canActivate: [
+  canActivate: [
     authGuard
   ]
 },
 {
-  path: 'dashboard',
-  component: DashboardComponent,
+  path: 'agentic-ai',
+  component:
+    MedicalAiAssistantComponent,
   canActivate: [
     authGuard
   ]

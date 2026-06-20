@@ -1,6 +1,8 @@
 package com.aihealthcare.ai_service.entity;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "document_embeddings")
@@ -15,10 +17,9 @@ public class DocumentEmbedding {
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    @Column(columnDefinition = "TEXT")
-    private String embedding;
-
-
+    @JdbcTypeCode(SqlTypes.VECTOR)
+    @Column(columnDefinition = "vector(768)")
+    private float[] embedding;
 
     public Long getId() {
         return id;
@@ -40,11 +41,11 @@ public class DocumentEmbedding {
         this.content = content;
     }
 
-    public String getEmbedding() {
+    public float[] getEmbedding() {
         return embedding;
     }
 
-    public void setEmbedding(String embedding) {
+    public void setEmbedding(float[] embedding) {
         this.embedding = embedding;
     }
 }
