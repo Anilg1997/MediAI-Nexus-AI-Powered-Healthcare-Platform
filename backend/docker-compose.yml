@@ -198,28 +198,28 @@ services:
     - "8089:8089"
 
   file-service:
-   build: ./file-service
+    build: ./file-service
 
-   container_name: file-service
+    container_name: file-service
 
-   depends_on:
-    - postgres
-    - kafka
+    depends_on:
+      - postgres
+      - kafka
 
-   ports:
-    - "8090:8090"
+    ports:
+      - "8090:8090"
 
-   payment-service:
+  payment-service:
     build: ./payment-service
 
     container_name: payment-service
 
     depends_on:
-     - postgres
-     - kafka
+      - postgres
+      - kafka
 
     ports:
-     - "8091:8091"
+      - "8091:8091"
 
 volumes:
   postgres_data:

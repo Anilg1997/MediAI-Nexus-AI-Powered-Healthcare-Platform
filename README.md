@@ -6,28 +6,28 @@ Enterprise-grade AI-Powered Healthcare Platform built using Spring Boot Microser
 
 ## 📸 Screenshots
 
+> Real browser screenshots captured via Playwright (Chromium) against the live Angular frontend.
+
 | Page | Preview |
 |------|---------|
-| **Login** — Bootstrap-themed login with email/password | ![Login](screenshots/login.svg) |
-| **Register** — Account creation form | ![Register](screenshots/register.svg) |
-| **Dashboard** — Hero section, quick access cards, stats overview, modules, AI tools | ![Dashboard](screenshots/dashboard.svg) |
-| **Patients** — Add/edit patient form with data table listing | ![Patients](screenshots/patients.svg) |
-| **Doctors** — Add/edit doctor management with specialization | ![Doctors](screenshots/doctors.svg) |
-| **Appointments** — Book appointments with status badges (confirmed, pending, completed) | ![Appointments](screenshots/appointments.svg) |
-| **Prescriptions** — Prescription management with medication tracking | ![Prescriptions](screenshots/prescription.svg) |
-| **Medical Records** — Patient medical history and clinical notes | ![Medical Records](screenshots/medical-records.svg) |
-| **Labs** — Laboratory report management with status tracking | ![Labs](screenshots/lab.svg) |
-| **Files** — Medical document upload and storage | ![Files](screenshots/files.svg) |
-| **Payments** — Billing and transaction management | ![Payments](screenshots/payment.svg) |
-| **Profile** — User profile and personal information | ![Profile](screenshots/profile.svg) |
-| **Settings** — Application configuration and preferences | ![Settings](screenshots/settings.svg) |
-| **AI Checker** — Symptom checker with AI analysis results | ![AI Checker](screenshots/ai-checker.svg) |
-| **AI Chat (RAG)** — RAG-powered medical assistant with knowledge base Q&A | ![AI Chat](screenshots/ai-chat.svg) |
-| **AI Summary** — AI-powered medical report summarization | ![AI Summary](screenshots/ai-summary.svg) |
-| **Prescription Analyzer** — AI analysis of prescriptions and medications | ![Prescription Analyzer](screenshots/prescription-analyzer.svg) |
-| **Lab Report Analyzer** — AI interpretation of lab reports | ![Lab Report Analyzer](screenshots/lab-report-analyzer.svg) |
-| **Medical AI Assistant** — RAG-based medical knowledge retrieval | ![Medical AI Assistant](screenshots/medical-ai-assistant.svg) |
-| **Agentic AI** — Multi-step reasoning and tool orchestration | ![Agentic AI](screenshots/agentic-ai.svg) |
+| **Login** — Bootstrap-themed login with email/password | ![Login](screenshots/login.png) |
+| **Register** — Account creation form | ![Register](screenshots/register.png) |
+| **Dashboard** — Hero section, quick access cards, stats overview, modules, AI tools | ![Dashboard](screenshots/dashboard.png) |
+| **Patients** — Add/edit patient form with data table listing | ![Patients](screenshots/patients.png) |
+| **Doctors** — Add/edit doctor management with specialization | ![Doctors](screenshots/doctors.png) |
+| **Appointments** — Book appointments with status badges (confirmed, pending, completed) | ![Appointments](screenshots/appointments.png) |
+| **Prescriptions** — Prescription management with medication tracking | ![Prescriptions](screenshots/prescription.png) |
+| **Medical Records** — Patient medical history and clinical notes | ![Medical Records](screenshots/medical-records.png) |
+| **Labs** — Laboratory report management with status tracking | ![Labs](screenshots/lab.png) |
+| **Files** — Medical document upload and storage | ![Files](screenshots/files.png) |
+| **Payments** — Billing and transaction management | ![Payments](screenshots/payment.png) |
+| **Profile** — User profile and personal information | ![Profile](screenshots/profile.png) |
+| **AI Checker** — Symptom checker with AI analysis results | ![AI Checker](screenshots/ai-checker.png) |
+| **AI Summary** — AI-powered medical report summarization | ![AI Summary](screenshots/ai-summary.png) |
+| **Prescription Analyzer** — AI analysis of prescriptions and medications | ![Prescription Analyzer](screenshots/prescription-analyzer.png) |
+| **Lab Report Analyzer** — AI interpretation of lab reports | ![Lab Report Analyzer](screenshots/lab-report-analyzer.png) |
+| **Medical AI Assistant** — RAG-based medical knowledge retrieval | ![Medical AI Assistant](screenshots/medical-ai-assistant.png) |
+| **Agentic AI** — Multi-step reasoning and tool orchestration | ![Agentic AI](screenshots/agentic-ai.png) |
 
 ---
 
