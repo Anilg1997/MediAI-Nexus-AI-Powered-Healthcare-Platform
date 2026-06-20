@@ -1,6 +1,6 @@
-# 🏥 AI Healthcare Platform
+# 🤖 MediAI Nexus
 
-Enterprise-grade AI Healthcare Platform built using Spring Boot Microservices, Angular, PostgreSQL with pgvector, Kafka, Docker, and Generative AI technologies including RAG (Retrieval-Augmented Generation), Agent AI, and Agentic AI.
+Enterprise-grade AI-Powered Healthcare Platform built using Spring Boot Microservices, Angular, PostgreSQL with pgvector, Kafka, Docker, and Generative AI technologies including RAG (Retrieval-Augmented Generation), Agent AI, and Agentic AI.
 
 ---
 

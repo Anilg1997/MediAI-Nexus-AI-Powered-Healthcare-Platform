@@ -9,8 +9,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>AI Healthcare Platform</name>
-    <description>Enterprise AI Healthcare Platform — Spring Boot Microservices</description>
+    <name>MediAI Nexus</name>
+    <description>Enterprise AI-Powered Healthcare Platform with RAG, Agentic AI, and Vector Search</description>
 
     <modules>
         <module>auth-service</module>
