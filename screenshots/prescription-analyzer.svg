@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="'Segoe UI','Inter',sans-serif">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="sucGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#198754"/><stop offset="100%" stop-color="#157347"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1100" height="750" fill="#f8f9fa"/>
+
+  <!-- Navbar -->
+  <rect width="1100" height="56" fill="#212529"/>
+  <text x="24" y="36" fill="white" font-size="20" font-weight="700">🏥 MediAI Nexus</text>
+  <rect x="900" y="14" rx="4" ry="4" width="60" height="28" fill="#0d6efd"/><text x="930" y="33" fill="white" font-size="12" text-anchor="middle">Dashboard</text>
+  <rect x="968" y="14" rx="4" ry="4" width="60" height="28" fill="#198754"/><text x="998" y="33" fill="white" font-size="12" text-anchor="middle">Profile</text>
+  <rect x="1036" y="14" rx="4" ry="4" width="50" height="28" fill="#dc3545"/><text x="1061" y="33" fill="white" font-size="12" text-anchor="middle">Logout</text>
+
+  <!-- Main content -->
+  <rect x="30" y="72" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="96" fill="#1e293b" font-size="20" font-weight="700">💊 AI Prescription Analyzer</text>
+  <text x="50" y="116" fill="#64748b" font-size="12">Analyze prescriptions and get detailed explanations of medicines</text>
+
+  <!-- Input -->
+  <rect x="30" y="140" rx="10" ry="10" width="500" height="380" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="168" fill="#1e293b" font-size="15" font-weight="600">Enter Prescription</text>
+  <text x="50" y="188" fill="#64748b" font-size="12">Paste or type the prescription details below</text>
+
+  <rect x="50" y="210" rx="8" ry="8" width="460" height="200" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="65" y="240" fill="#94a3b8" font-size="12">Patient: Emily Davis</text>
+  <text x="65" y="262" fill="#94a3b8" font-size="12">Doctor: Dr. Mark Chen</text>
+  <text x="65" y="284" fill="#94a3b8" font-size="12">Date: June 14, 2025</text>
+  <text x="65" y="310" fill="#94a3b8" font-size="12">Medicines:</text>
+  <text x="65" y="330" fill="#475569" font-size="12">1. Metformin 500mg — 1 tablet twice daily</text>
+  <text x="65" y="350" fill="#475569" font-size="12">2. Glipizide 5mg — 1 tablet before breakfast</text>
+  <text x="65" y="370" fill="#475569" font-size="12">3. Atorvastatin 10mg — 1 tablet at bedtime</text>
+  <text x="65" y="390" fill="#475569" font-size="12">Duration: 3 months</text>
+
+  <rect x="180" y="425" rx="8" ry="8" width="200" height="42" fill="url(#aiGrad)"/>
+  <text x="280" y="450" fill="white" font-size="14" font-weight="600" text-anchor="middle">🤖 Analyze Prescription</text>
+
+  <!-- Output -->
+  <rect x="560" y="140" rx="10" ry="10" width="510" height="380" fill="white" filter="url(#shadow)"/>
+  <text x="580" y="168" fill="#1e293b" font-size="15" font-weight="600">📋 Analysis Results</text>
+  <text x="580" y="188" fill="#64748b" font-size="12">Detailed breakdown of your prescription</text>
+
+  <rect x="580" y="210" rx="8" ry="8" width="470" height="290" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+
+  <!-- Analysis item 1 -->
+  <rect x="598" y="226" rx="6" ry="6" width="435" height="70" fill="white" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="615" y="248" fill="#6b21a8" font-size="13" font-weight="600">Metformin 500mg</text>
+  <text x="615" y="266" fill="#475569" font-size="11">Purpose: Controls blood sugar in type 2 diabetes</text>
+  <text x="615" y="282" fill="#64748b" font-size="10">Precaution: Take with meals to avoid stomach upset</text>
+
+  <!-- Analysis item 2 -->
+  <rect x="598" y="304" rx="6" ry="6" width="435" height="70" fill="white" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="615" y="326" fill="#6b21a8" font-size="13" font-weight="600">Glipizide 5mg</text>
+  <text x="615" y="344" fill="#475569" font-size="11">Purpose: Stimulates insulin release from pancreas</text>
+  <text x="615" y="360" fill="#64748b" font-size="10">Precaution: Monitor blood sugar; risk of hypoglycemia</text>
+
+  <!-- Analysis item 3 -->
+  <rect x="598" y="382" rx="6" ry="6" width="435" height="70" fill="white" stroke="#e9d5ff" stroke-width="1"/>
+  <text x="615" y="404" fill="#6b21a8" font-size="13" font-weight="600">Atorvastatin 10mg</text>
+  <text x="615" y="422" fill="#475569" font-size="11">Purpose: Lowers cholesterol levels</text>
+  <text x="615" y="438" fill="#64748b" font-size="10">Precaution: Avoid grapefruit juice; report muscle pain</text>
+
+  <!-- Recommendations -->
+  <rect x="598" y="460" rx="6" ry="6" width="435" height="26" fill="#f0fdf4"/>
+  <text x="615" y="478" fill="#166534" font-size="11">✅ All medicines are compatible. No drug interactions found.</text>
+
+  <!-- Features -->
+  <rect x="30" y="540" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="564" fill="#475569" font-size="12" font-weight="600">ℹ️ What the AI analyzes</text>
+  <text x="50" y="582" fill="#64748b" font-size="11">1. Medicine identification → 2. Purpose explanation → 3. Dosage analysis → 4. Drug interaction check → 5. Precaution recommendations</text>
+
+  <rect x="30" y="610" rx="8" ry="8" width="240" height="70" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="150" y="636" fill="#1e40af" font-size="14" font-weight="600" text-anchor="middle">💊 Medicine Names</text>
+  <text x="150" y="656" fill="#3b82f6" font-size="11" text-anchor="middle">Identifies all medicines</text>
+
+  <rect x="290" y="610" rx="8" ry="8" width="240" height="70" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="410" y="636" fill="#166534" font-size="14" font-weight="600" text-anchor="middle">🎯 Purpose Detection</text>
+  <text x="410" y="656" fill="#22c55e" font-size="11" text-anchor="middle">Explains why each medicine</text>
+
+  <rect x="550" y="610" rx="8" ry="8" width="240" height="70" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="670" y="636" fill="#92400e" font-size="14" font-weight="600" text-anchor="middle">⚠️ Safety Check</text>
+  <text x="670" y="656" fill="#d97706" font-size="11" text-anchor="middle">Drug interactions & precautions</text>
+
+  <rect x="810" y="610" rx="8" ry="8" width="260" height="70" fill="#fce7f3" stroke="#fbcfe8" stroke-width="1"/>
+  <text x="940" y="636" fill="#831843" font-size="14" font-weight="600" text-anchor="middle">📖 Patient Summary</text>
+  <text x="940" y="656" fill="#db2777" font-size="11" text-anchor="middle">Simple language explanation</text>
+</svg>

@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="'Segoe UI','Inter',sans-serif">
+  <defs>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1100" height="750" fill="#f8f9fa"/>
+
+  <!-- Navbar -->
+  <rect width="1100" height="56" fill="#212529"/>
+  <text x="24" y="36" fill="white" font-size="20" font-weight="700">🏥 MediAI Nexus</text>
+  <rect x="900" y="14" rx="4" ry="4" width="60" height="28" fill="#0d6efd"/><text x="930" y="33" fill="white" font-size="12" text-anchor="middle">Dashboard</text>
+  <rect x="968" y="14" rx="4" ry="4" width="60" height="28" fill="#198754"/><text x="998" y="33" fill="white" font-size="12" text-anchor="middle">Profile</text>
+  <rect x="1036" y="14" rx="4" ry="4" width="50" height="28" fill="#dc3545"/><text x="1061" y="33" fill="white" font-size="12" text-anchor="middle">Logout</text>
+
+  <!-- Main content -->
+  <rect x="30" y="72" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="96" fill="#1e293b" font-size="20" font-weight="700">🧪 AI Lab Report Analyzer</text>
+  <text x="50" y="116" fill="#64748b" font-size="12">Comprehensive lab report interpretation with AI-powered analysis</text>
+
+  <!-- Input -->
+  <rect x="30" y="140" rx="10" ry="10" width="500" height="380" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="168" fill="#1e293b" font-size="15" font-weight="600">Enter Lab Report</text>
+  <text x="50" y="188" fill="#64748b" font-size="12">Paste lab report data for AI analysis</text>
+
+  <rect x="50" y="210" rx="8" ry="8" width="460" height="200" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="65" y="240" fill="#94a3b8" font-size="12">Patient: Sarah Johnson</text>
+  <text x="65" y="258" fill="#94a3b8" font-size="12">Test: Lipid Profile</text>
+  <text x="65" y="276" fill="#94a3b8" font-size="12">Date: June 12, 2025</text>
+  <text x="65" y="300" fill="#475569" font-size="12" font-weight="600">Results:</text>
+  <text x="65" y="320" fill="#475569" font-size="12">Total Cholesterol: 240 mg/dL</text>
+  <text x="65" y="340" fill="#475569" font-size="12">LDL Cholesterol: 160 mg/dL</text>
+  <text x="65" y="360" fill="#475569" font-size="12">HDL Cholesterol: 38 mg/dL</text>
+  <text x="65" y="380" fill="#475569" font-size="12">Triglycerides: 200 mg/dL</text>
+
+  <rect x="180" y="425" rx="8" ry="8" width="200" height="42" fill="url(#aiGrad)"/>
+  <text x="280" y="450" fill="white" font-size="14" font-weight="600" text-anchor="middle">🤖 Analyze Report</text>
+
+  <!-- Output -->
+  <rect x="560" y="140" rx="10" ry="10" width="510" height="380" fill="white" filter="url(#shadow)"/>
+  <text x="580" y="168" fill="#1e293b" font-size="15" font-weight="600">📋 Analysis Results</text>
+  <text x="580" y="188" fill="#64748b" font-size="12">AI interpretation of your lab report</text>
+
+  <rect x="580" y="210" rx="8" ry="8" width="470" height="290" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+
+  <text x="600" y="238" fill="#6b21a8" font-size="13" font-weight="600">⚠️ Abnormal Values Found</text>
+
+  <rect x="600" y="254" rx="6" ry="6" width="435" height="28" fill="#fee2e2"/>
+  <text x="615" y="273" fill="#991b1b" font-size="11" font-weight="600">Total Cholesterol: 240 mg/dL (High) — Normal: <200</text>
+
+  <rect x="600" y="288" rx="6" ry="6" width="435" height="28" fill="#fee2e2"/>
+  <text x="615" y="307" fill="#991b1b" font-size="11" font-weight="600">LDL Cholesterol: 160 mg/dL (High) — Normal: <100</text>
+
+  <rect x="600" y="322" rx="6" ry="6" width="435" height="28" fill="#fee2e2"/>
+  <text x="615" y="341" fill="#991b1b" font-size="11" font-weight="600">HDL Cholesterol: 38 mg/dL (Low) — Normal: >50</text>
+
+  <rect x="600" y="356" rx="6" ry="6" width="435" height="28" fill="#fef3c7"/>
+  <text x="615" y="375" fill="#92400e" font-size="11" font-weight="600">Triglycerides: 200 mg/dL (Borderline) — Normal: <150</text>
+
+  <text x="600" y="412" fill="#475569" font-size="12" font-weight="600">Health Recommendations:</text>
+  <text x="600" y="432" fill="#64748b" font-size="11">• Dietary changes: Reduce saturated fats</text>
+  <text x="600" y="450" fill="#64748b" font-size="11">• Exercise: 30 min moderate activity daily</text>
+  <text x="600" y="468" fill="#64748b" font-size="11">• Follow-up: Repeat test in 3 months</text>
+  <text x="600" y="486" fill="#64748b" font-size="11">• Consultation: Consider lipid-lowering medication</text>
+
+  <!-- Features -->
+  <rect x="30" y="540" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="564" fill="#475569" font-size="12" font-weight="600">ℹ️ AI Analysis Capabilities</text>
+  <text x="50" y="582" fill="#64748b" font-size="11">1. Abnormal value detection → 2. Medical significance explanation → 3. Health recommendations → 4. Patient-friendly summary</text>
+
+  <rect x="30" y="610" rx="8" ry="8" width="240" height="70" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="150" y="636" fill="#1e40af" font-size="14" font-weight="600" text-anchor="middle">🔍 Value Detection</text>
+  <text x="150" y="656" fill="#3b82f6" font-size="11" text-anchor="middle">Flags abnormal results</text>
+
+  <rect x="290" y="610" rx="8" ry="8" width="240" height="70" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="410" y="636" fill="#166534" font-size="14" font-weight="600" text-anchor="middle">🎯 Risk Assessment</text>
+  <text x="410" y="656" fill="#22c55e" font-size="11" text-anchor="middle">Evaluates health risks</text>
+
+  <rect x="550" y="610" rx="8" ry="8" width="240" height="70" fill="#fef3c7" stroke="#fde68a" stroke-width="1"/>
+  <text x="670" y="636" fill="#92400e" font-size="14" font-weight="600" text-anchor="middle">💡 Recommendations</text>
+  <text x="670" y="656" fill="#d97706" font-size="11" text-anchor="middle">Actionable health advice</text>
+
+  <rect x="810" y="610" rx="8" ry="8" width="260" height="70" fill="#fce7f3" stroke="#fbcfe8" stroke-width="1"/>
+  <text x="940" y="636" fill="#831843" font-size="14" font-weight="600" text-anchor="middle">📊 Trend Analysis</text>
+  <text x="940" y="656" fill="#db2777" font-size="11" text-anchor="middle">Compares with history</text>
+</svg>

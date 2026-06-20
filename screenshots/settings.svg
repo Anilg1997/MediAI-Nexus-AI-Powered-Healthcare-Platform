@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="'Segoe UI','Inter',sans-serif">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd"/><stop offset="100%" stop-color="#0a58ca"/>
+    </linearGradient>
+    <linearGradient id="sucGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#198754"/><stop offset="100%" stop-color="#157347"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1100" height="750" fill="#f8f9fa"/>
+
+  <!-- Navbar -->
+  <rect width="1100" height="56" fill="#212529"/>
+  <text x="24" y="36" fill="white" font-size="20" font-weight="700">🏥 MediAI Nexus</text>
+  <rect x="900" y="14" rx="4" ry="4" width="60" height="28" fill="#0d6efd"/><text x="930" y="33" fill="white" font-size="12" text-anchor="middle">Dashboard</text>
+  <rect x="968" y="14" rx="4" ry="4" width="60" height="28" fill="#198754"/><text x="998" y="33" fill="white" font-size="12" text-anchor="middle">Profile</text>
+  <rect x="1036" y="14" rx="4" ry="4" width="50" height="28" fill="#dc3545"/><text x="1061" y="33" fill="white" font-size="12" text-anchor="middle">Logout</text>
+
+  <!-- Main content -->
+  <rect x="30" y="72" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="96" fill="#1e293b" font-size="20" font-weight="700">⚙️ Settings</text>
+  <text x="50" y="116" fill="#64748b" font-size="12">Configure application settings and preferences</text>
+
+  <!-- Settings sidebar -->
+  <rect x="30" y="145" rx="10" ry="10" width="240" height="300" fill="white" filter="url(#shadow)"/>
+  <rect x="50" y="165" rx="6" ry="6" width="200" height="36" fill="#0d6efd"/>
+  <text x="150" y="188" fill="white" font-size="13" text-anchor="middle">⚙️ General Settings</text>
+  <rect x="50" y="209" rx="6" ry="6" width="200" height="36" fill="#f8fafc"/>
+  <text x="150" y="232" fill="#475569" font-size="13" text-anchor="middle">🔒 Security</text>
+  <rect x="50" y="253" rx="6" ry="6" width="200" height="36" fill="#f8fafc"/>
+  <text x="150" y="276" fill="#475569" font-size="13" text-anchor="middle">🔔 Notifications</text>
+  <rect x="50" y="297" rx="6" ry="6" width="200" height="36" fill="#f8fafc"/>
+  <text x="150" y="320" fill="#475569" font-size="13" text-anchor="middle">🎨 Appearance</text>
+  <rect x="50" y="341" rx="6" ry="6" width="200" height="36" fill="#f8fafc"/>
+  <text x="150" y="364" fill="#475569" font-size="13" text-anchor="middle">🤖 AI Preferences</text>
+  <rect x="50" y="385" rx="6" ry="6" width="200" height="36" fill="#f8fafc"/>
+  <text x="150" y="408" fill="#475569" font-size="13" text-anchor="middle">📊 Data & Privacy</text>
+
+  <!-- Settings content -->
+  <rect x="290" y="145" rx="10" ry="10" width="780" height="300" fill="white" filter="url(#shadow)"/>
+  <text x="310" y="175" fill="#1e293b" font-size="16" font-weight="600">⚙️ General Settings</text>
+  <text x="310" y="195" fill="#64748b" font-size="12">Configure your application preferences</text>
+
+  <!-- Toggle settings -->
+  <rect x="310" y="218" rx="6" ry="6" width="740" height="40" fill="#f8fafc"/>
+  <text x="328" y="242" fill="#1e293b" font-size="13">🌙 Dark Mode</text>
+  <text x="328" y="254" fill="#94a3b8" font-size="10">Toggle between light and dark theme</text>
+  <rect x="960" y="226" rx="12" ry="12" width="40" height="22" fill="#0d6efd"/>
+  <circle cx="994" cy="237" r="8" fill="white"/>
+
+  <rect x="310" y="266" rx="6" ry="6" width="740" height="40" fill="#f8fafc"/>
+  <text x="328" y="290" fill="#1e293b" font-size="13">🔔 Email Notifications</text>
+  <text x="328" y="302" fill="#94a3b8" font-size="10">Receive email updates for appointments and reports</text>
+  <rect x="960" y="274" rx="12" ry="12" width="40" height="22" fill="#0d6efd"/>
+  <circle cx="994" cy="285" r="8" fill="white"/>
+
+  <rect x="310" y="314" rx="6" ry="6" width="740" height="40" fill="#f8fafc"/>
+  <text x="328" y="338" fill="#1e293b" font-size="13">📱 Push Notifications</text>
+  <text x="328" y="350" fill="#94a3b8" font-size="10">Receive push notifications for reminders</text>
+  <rect x="960" y="322" rx="12" ry="12" width="40" height="22" fill="#e2e8f0"/>
+  <circle cx="974" cy="333" r="8" fill="white"/>
+
+  <rect x="310" y="362" rx="6" ry="6" width="740" height="40" fill="#f8fafc"/>
+  <text x="328" y="386" fill="#1e293b" font-size="13">🔒 Auto-Lock Session</text>
+  <text x="328" y="398" fill="#94a3b8" font-size="10">Automatically lock session after 15 minutes of inactivity</text>
+  <rect x="960" y="370" rx="12" ry="12" width="40" height="22" fill="#e2e8f0"/>
+  <circle cx="974" cy="381" r="8" fill="white"/>
+
+  <rect x="310" y="410" rx="8" ry="8" width="160" height="22" fill="url(#sucGrad)"/>
+  <text x="390" y="425" fill="white" font-size="11" font-weight="600" text-anchor="middle">💾 Save Settings</text>
+
+  <!-- System Info section -->
+  <rect x="30" y="460" rx="10" ry="10" width="1040" height="120" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="488" fill="#1e293b" font-size="16" font-weight="600">ℹ️ System Information</text>
+
+  <rect x="50" y="505" rx="6" ry="6" width="240" height="24" fill="#f8fafc"/>
+  <text x="170" y="522" fill="#475569" font-size="12" text-anchor="middle">Version: 2.1.0</text>
+
+  <rect x="310" y="505" rx="6" ry="6" width="240" height="24" fill="#f8fafc"/>
+  <text x="430" y="522" fill="#475569" font-size="12" text-anchor="middle">Build: June 2025</text>
+
+  <rect x="570" y="505" rx="6" ry="6" width="240" height="24" fill="#f8fafc"/>
+  <text x="690" y="522" fill="#475569" font-size="12" text-anchor="middle">LLM: Llama 3 (Ollama)</text>
+
+  <rect x="830" y="505" rx="6" ry="6" width="220" height="24" fill="#f8fafc"/>
+  <text x="940" y="522" fill="#475569" font-size="12" text-anchor="middle">Vector DB: pgvector</text>
+
+  <rect x="50" y="540" rx="6" ry="6" width="500" height="24" fill="#f8fafc"/>
+  <text x="300" y="557" fill="#475569" font-size="12" text-anchor="middle">Database: PostgreSQL 16 with pgvector extension</text>
+
+  <rect x="570" y="540" rx="6" ry="6" width="480" height="24" fill="#f8fafc"/>
+  <text x="810" y="557" fill="#475569" font-size="12" text-anchor="middle">Framework: Spring Boot 3.3 + Angular 21</text>
+
+  <!-- Danger zone -->
+  <rect x="30" y="598" rx="10" ry="10" width="1040" height="100" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="626" fill="#dc3545" font-size="16" font-weight="600">⚠️ Danger Zone</text>
+
+  <rect x="50" y="644" rx="6" ry="6" width="240" height="36" fill="#fee2e2" stroke="#fecaca" stroke-width="1"/>
+  <text x="170" y="666" fill="#dc3545" font-size="13" font-weight="600" text-anchor="middle">🔄 Reset All Settings</text>
+
+  <rect x="310" y="644" rx="6" ry="6" width="240" height="36" fill="#fee2e2" stroke="#fecaca" stroke-width="1"/>
+  <text x="430" y="666" fill="#dc3545" font-size="13" font-weight="600" text-anchor="middle">🗑️ Clear Cache</text>
+
+  <rect x="570" y="644" rx="6" ry="6" width="240" height="36" fill="#fee2e2" stroke="#fecaca" stroke-width="1"/>
+  <text x="690" y="666" fill="#dc3545" font-size="13" font-weight="600" text-anchor="middle">📤 Export All Data</text>
+</svg>

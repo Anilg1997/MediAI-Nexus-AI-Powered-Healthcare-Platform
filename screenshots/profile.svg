@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 750" font-family="'Segoe UI','Inter',sans-serif">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d6efd"/><stop offset="100%" stop-color="#0a58ca"/>
+    </linearGradient>
+    <linearGradient id="sucGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#198754"/><stop offset="100%" stop-color="#157347"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/></filter>
+  </defs>
+  <rect width="1100" height="750" fill="#f8f9fa"/>
+
+  <!-- Navbar -->
+  <rect width="1100" height="56" fill="#212529"/>
+  <text x="24" y="36" fill="white" font-size="20" font-weight="700">🏥 MediAI Nexus</text>
+  <rect x="900" y="14" rx="4" ry="4" width="60" height="28" fill="#0d6efd"/><text x="930" y="33" fill="white" font-size="12" text-anchor="middle">Dashboard</text>
+  <rect x="968" y="14" rx="4" ry="4" width="60" height="28" fill="#198754"/><text x="998" y="33" fill="white" font-size="12" text-anchor="middle">Profile</text>
+  <rect x="1036" y="14" rx="4" ry="4" width="50" height="28" fill="#dc3545"/><text x="1061" y="33" fill="white" font-size="12" text-anchor="middle">Logout</text>
+
+  <!-- Main content -->
+  <rect x="30" y="72" rx="10" ry="10" width="1040" height="55" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="96" fill="#1e293b" font-size="20" font-weight="700">👤 My Profile</text>
+  <text x="50" y="116" fill="#64748b" font-size="12">Manage your personal information and account settings</text>
+
+  <!-- Profile card -->
+  <rect x="30" y="145" rx="10" ry="10" width="320" height="300" fill="white" filter="url(#shadow)"/>
+  <circle cx="190" cy="200" r="50" fill="url(#heroGrad)"/>
+  <text x="190" y="208" fill="white" font-size="30" text-anchor="middle" font-weight="600">AD</text>
+  <text x="190" y="268" fill="#1e293b" font-size="18" font-weight="700" text-anchor="middle">Admin User</text>
+  <text x="190" y="290" fill="#64748b" font-size="13" text-anchor="middle">admin@healthcare.com</text>
+  <rect x="120" y="305" rx="6" ry="6" width="140" height="24" fill="#eff6ff"/>
+  <text x="190" y="322" fill="#1e40af" font-size="12" text-anchor="middle">🔑 Admin Role</text>
+  <rect x="75" y="340" rx="6" ry="6" width="230" height="36" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="190" y="358" fill="#166534" font-size="12" text-anchor="middle">✅ Email Verified</text>
+  <rect x="75" y="384" rx="6" ry="6" width="230" height="40" fill="#faf5ff" stroke="#ddd6fe" stroke-width="1"/>
+  <text x="190" y="402" fill="#6b21a8" font-size="12" text-anchor="middle">🏥 MediAI Nexus since 2025</text>
+  <text x="190" y="416" fill="#8b5cf6" font-size="11" text-anchor="middle">Full access to all features</text>
+
+  <!-- Profile form -->
+  <rect x="370" y="145" rx="10" ry="10" width="700" height="300" fill="white" filter="url(#shadow)"/>
+  <text x="390" y="175" fill="#1e293b" font-size="16" font-weight="600">Personal Information</text>
+
+  <text x="390" y="205" fill="#475569" font-size="12">Full Name</text>
+  <rect x="390" y="214" rx="6" ry="6" width="320" height="38" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="405" y="238" fill="#1e293b" font-size="13">Admin User</text>
+
+  <text x="390" y="270" fill="#475569" font-size="12">Email Address</text>
+  <rect x="390" y="279" rx="6" ry="6" width="320" height="38" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="405" y="303" fill="#1e293b" font-size="13">admin@healthcare.com</text>
+
+  <text x="390" y="335" fill="#475569" font-size="12">Phone Number</text>
+  <rect x="390" y="344" rx="6" ry="6" width="320" height="38" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="405" y="368" fill="#1e293b" font-size="13">+1 (555) 123-4567</text>
+
+  <text x="730" y="205" fill="#475569" font-size="12">Role</text>
+  <rect x="730" y="214" rx="6" ry="6" width="320" height="38" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="745" y="238" fill="#1e293b" font-size="13">Administrator (Full Access)</text>
+
+  <text x="730" y="270" fill="#475569" font-size="12">Department</text>
+  <rect x="730" y="279" rx="6" ry="6" width="320" height="38" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="745" y="303" fill="#1e293b" font-size="13">Healthcare Management</text>
+
+  <rect x="730" y="344" rx="8" ry="8" width="160" height="38" fill="url(#heroGrad)"/>
+  <text x="810" y="368" fill="white" font-size="13" font-weight="600" text-anchor="middle">💾 Save Changes</text>
+
+  <!-- Activity section -->
+  <rect x="30" y="460" rx="10" ry="10" width="1040" height="150" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="488" fill="#1e293b" font-size="16" font-weight="600">Recent Activity</text>
+
+  <!-- Activity items -->
+  <rect x="50" y="502" rx="6" ry="6" width="1000" height="28" fill="#f8fafc"/>
+  <text x="68" y="521" fill="#475569" font-size="12">● Created patient record for John Smith</text>
+  <text x="920" y="521" fill="#94a3b8" font-size="11">2 hours ago</text>
+
+  <rect x="50" y="536" rx="6" ry="6" width="1000" height="28" fill="#f8fafc"/>
+  <text x="68" y="555" fill="#475569" font-size="12">● Updated doctor profile for Dr. Sarah Lee</text>
+  <text x="920" y="555" fill="#94a3b8" font-size="11">5 hours ago</text>
+
+  <rect x="50" y="570" rx="6" ry="6" width="1000" height="28" fill="#f8fafc"/>
+  <text x="68" y="589" fill="#475569" font-size="12">● Booked appointment: Robert Wilson with Dr. Anna Patel</text>
+  <text x="920" y="589" fill="#94a3b8" font-size="11">Yesterday</text>
+
+  <!-- Security section -->
+  <rect x="30" y="625" rx="10" ry="10" width="1040" height="80" fill="white" filter="url(#shadow)"/>
+  <text x="50" y="652" fill="#1e293b" font-size="16" font-weight="600">🔒 Security Settings</text>
+
+  <rect x="50" y="665" rx="6" ry="6" width="200" height="28" fill="#f1f5f9"/>
+  <text x="150" y="684" fill="#475569" font-size="12" text-anchor="middle">🔑 Change Password</text>
+  <rect x="270" y="665" rx="6" ry="6" width="200" height="28" fill="#f1f5f9"/>
+  <text x="370" y="684" fill="#475569" font-size="12" text-anchor="middle">📧 Update Email</text>
+  <rect x="490" y="665" rx="6" ry="6" width="200" height="28" fill="#f1f5f9"/>
+  <text x="590" y="684" fill="#475569" font-size="12" text-anchor="middle">🔐 Two-Factor Auth</text>
+</svg>
